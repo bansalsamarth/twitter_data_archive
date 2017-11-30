@@ -1,5 +1,10 @@
-import requests, json
+import requests, json, csv
 from bs4 import BeautifulSoup
+
+def output_to_csv(data, filename):
+	with open(filename, "wb") as f:
+		writer = csv.writer(f)
+		writer.writerows(data)
 
 url ="https://www.india.gov.in/my-government/whos-who/council-ministers"               
 
@@ -27,7 +32,6 @@ for tb in tbody:
 		
 		links = td.findAll('a')
 
-		#d = []
 		for link in links:
 			if link.text=='Twitter Account ':
 				min_data['twitter'] = link['href']
@@ -35,11 +39,7 @@ for tb in tbody:
 				min_data['facebook'] = link['href']
 			elif link.text == 'Contact ':
 				min_data['contact'] = link['href']
-		    
-		    #d.append([, link['href']])
-
-		print min_data
 		
-		data.append(min_data)
+		data.append([min_data['name'], min_data['twitter'], min_data['facebook'], min_data['contact']])
 
-json
+output_to_csv(data, 'cabinet_ministers.csv')
