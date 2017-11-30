@@ -130,9 +130,9 @@ driver = webdriver.Safari()  # options are Chrome() Firefox() Safari()
 try:
     user_detail = api.get_user(twitter_handle)
 
-    start_month = 2# user_detail.created_at.month
+    start_month = user_detail.created_at.month
     start_year = user_detail.created_at.year
-    start_day = 1#user_detail.created_at.day
+    start_day = user_detail.created_at.day
 
     end_month = datetime.datetime.now().month
     end_year = datetime.datetime.now().year
