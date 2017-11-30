@@ -18,3 +18,17 @@
 `archive_scrape.py` Script to fetch tweets using Twitter's search interface. Gets all tweets for a particular day. Doesn't get retweets. 
 #### analysis
 `analysis.py` Collection of basic text analytics functions to analyse tweets data
+
+### Status
+The system is deployed on Google Cloud Platform and is collecting tweets of all politicians listed in  `twitter_handles.csv`
+
+**Under development:** Frontend tool for automated analytics. Will be launched in March 2018. 
+
+**Want to contribute?** Drop me an email `samarthbansal42@gmail.com`
+
+
+
+
+
+
+
